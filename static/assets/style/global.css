@@ -1,0 +1,49 @@
+html {
+    background-color: #FCEFCF;
+}
+
+body {
+    text-align: center;
+    max-width: 600px;
+    padding: 12px;
+    margin: 0px auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+p {
+    margin: 0.25em 0;
+}
+
+a {
+    color: #1E5DA4;
+    padding: 0px 0.25em;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid black;
+}
+
+/*--- Home Page Styling ---*/
+#logo {
+    width: 120px;
+}
+
+nav {
+    padding: 12px;
+}
+
+table {
+    width: 100%;
+}
+
+th, td {
+    padding: 5px;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
