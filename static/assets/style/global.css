@@ -14,17 +14,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 p {
-    margin: 0.25em 0;
+    margin: 0.6em 0;
 }
 
 a {
     color: #1E5DA4;
-    padding: 0px 0.25em;
-}
-
-hr {
-    border: 0;
-    border-top: 1px solid black;
+    padding: 0px 0.3em;
 }
 
 /*--- Home Page Styling ---*/
@@ -38,10 +33,11 @@ nav {
 
 table {
     width: 100%;
+    margin: 0.6em 0;
 }
 
 th, td {
-    padding: 5px;
+    padding: 0.6em;
 }
 
 table, th, td {
