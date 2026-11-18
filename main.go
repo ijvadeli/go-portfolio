@@ -1,21 +1,36 @@
 package main
 
 import (
-	"fmt"
+	"html/template"
 	"log"
 	"net/http"
 )
 
 func home(w http.ResponseWriter, r *http.Request) {
-	fs := http.FileServer(http.Dir("./static"))
-	fs.ServeHTTP(w, r)
+	w.Header().Add("Server", "Go")
+
+	files := []string{
+		"./static/html/base.tmpl",
+		"./static/html/pages/home.tmpl",
+		"./static/html/components/nav.tmpl",
+		"./static/html/components/head.tmpl",
+	}
+
+	ts, err := template.ParseFiles(files...)
+	if err != nil {
+		log.Print(err.Error())
+		http.Error(w, "Internal Server Error", http.StatusInternalServerError)
+		return
+	}
+
+	err = ts.ExecuteTemplate(w, "base", nil)
+	if err != nil {
+		log.Print(err.Error())
+		http.Error(w, "Internal Server Error", http.StatusInternalServerError)
+	}
 }
 
 func main() {
 	http.HandleFunc("/", home)
-
-	port := ":8080"
-	fmt.Println("Server running on " + port)
-
-	log.Fatal(http.ListenAndServe(port, nil))
+	http.ListenAndServe(":8080", nil)
 }

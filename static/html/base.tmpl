@@ -1,0 +1,20 @@
+{{define "base"}}
+<!DOCTYPE html>
+<html lang="en">
+    {{template "head" .}}
+    <body>
+        <header>
+            <img src="assets/image/autumn.png" id="logo"/>
+            <h1>IJvadeli</h1>
+            <p>Software Dev - Front-end & Cloud Engineering</p>
+            {{template "nav" .}}
+        </header>
+        <main>
+            {{template "main" .}}
+        </main>
+        <footer>
+            <p>Powered by <a href="https://go.dev/" target="_blank">Gophers</a></p>
+        </footer>
+    </body>
+</html>
+{{end}}
