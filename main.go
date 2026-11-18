@@ -31,6 +31,16 @@ func home(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
+	// Fileserver for all files in assets to make them reachable
+	fs := http.FileServer(http.Dir("./static/assets/"))
+	http.Handle("GET /assets/", http.StripPrefix("/assets", fs))
+
+	// Page paths
 	http.HandleFunc("/", home)
-	http.ListenAndServe(":8080", nil)
+
+	// Setting up host
+	port := ":8080"
+	log.Print("Starting on port :8080")
+	err := http.ListenAndServe(port, nil)
+	log.Fatal(err)
 }
