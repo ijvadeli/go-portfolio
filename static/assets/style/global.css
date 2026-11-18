@@ -22,6 +22,11 @@ a {
     padding: 0px 0.3em;
 }
 
+br {
+    display: block;
+    margin: 0.5em 0;
+}
+
 /*--- Home Page Styling ---*/
 #logo {
     width: 120px;
